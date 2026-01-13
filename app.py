@@ -2,12 +2,13 @@
 
 import streamlit as st
 import pandas as pd
+import os
 from sqlalchemy import create_engine
 
 # -------------------------------
 # PostgreSQL connection details
 # -------------------------------
-DATABASE_URL = "postgresql://etl_warehouse_user:lmHfpsZBHL7zkCXMnzH8fpw1BcPQAVVl@dpg-d5drekqli9vc73do4fa0-a.oregon-postgres.render.com/etl_warehouse"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 
